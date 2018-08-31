@@ -1,0 +1,26 @@
+{
+    "name" : "Rentcars",
+    "description" : "Theme for Rentcars",
+    "screenshot" : "/img/screenshot.png",
+
+    "author" : "Marcin Szut",
+    "authorEmail" : "",
+    "authorUrl" : "",
+
+    "menus" : [
+        "main",
+        "rozgrywka",
+        "historia",
+        "dokumenty",
+        "pozostale",
+        "footer"
+    ],
+
+    "regions" : [
+        "sponsorzy-gora",
+        "sponsorzy-dol"
+    ],
+
+    "settings" : {
+    }
+}

@@ -1,0 +1,35 @@
+$(document).ready(function () {
+  setTimeout(function () {
+    $('div.message').fadeOut('fast');
+  }, 5000);
+
+  $(document).ready(function () {
+    $("#reviews").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      infinite: false,
+      dots: true,
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          infinite: true
+        }
+
+      },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            dots: true
+          }
+
+        },
+        {
+          breakpoint: 300,
+          settings: "unslick" // destroys slick
+        }]
+    });
+  });
+});
