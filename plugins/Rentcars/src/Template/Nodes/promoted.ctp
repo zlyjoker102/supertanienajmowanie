@@ -16,27 +16,28 @@ $this->end();
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="service-box mx-auto">
-
-                    <h3 class="mb-3">Wynajem busów</h3>
-                    <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="service-box mx-auto">
-
-                    <h3 class="mb-3">Wycieczki zagraniczne</h3>
-                    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="service-box mx-auto">
-
-                    <h3 class="mb-3">Przewozy na imprezy okolicznościowe</h3>
-                    <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-                </div>
-            </div>
+            <?php echo $this->Regions->blocks('co-oferujemy-naszym-klientom');  ?>
+<!--            <div class="col-lg-4 col-md-6 text-center">-->
+<!--                <div class="service-box mx-auto">-->
+<!---->
+<!--                    <h3 class="mb-3">Wynajem busów</h3>-->
+<!--                    <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6 text-center">-->
+<!--                <div class="service-box mx-auto">-->
+<!---->
+<!--                    <h3 class="mb-3">Wycieczki zagraniczne</h3>-->
+<!--                    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6 text-center">-->
+<!--                <div class="service-box mx-auto">-->
+<!---->
+<!--                    <h3 class="mb-3">Przewozy na imprezy okolicznościowe</h3>-->
+<!--                    <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </section>
