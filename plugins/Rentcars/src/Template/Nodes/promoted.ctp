@@ -1,6 +1,9 @@
 <?php
+
+use Cake\Core\Configure;
+
 $this->append('title');
-echo 'megatanienajmowanie';
+echo 'Supertanienajmowanie';
 $this->end();
 
 //        echo  $this->Element('slider');
@@ -166,23 +169,26 @@ $this->end();
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading">Kontakt</h2>
+                <h2 class="section-heading">
+                    <?php echo Configure::read('Promoted.contactTitle'); ?>
+                </h2>
                 <hr class="my-4">
                 <p class="mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet illum modi quam quis quisquam
-                    sint!
+                    <?php echo Configure::read('Promoted.contactBody'); ?>
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 ml-auto text-center">
                 <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-                <p>123-456-6789</p>
+                <p><?php echo Configure::read('Promoted.contactPhone'); ?></p>
             </div>
             <div class="col-lg-4 mr-auto text-center">
                 <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
                 <p>
-                    <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+                    <a href="mailto:your-email@your-domain.com">
+                        <?php echo Configure::read('Promoted.contactEmail'); ?>
+                    </a>
                 </p>
             </div>
         </div>

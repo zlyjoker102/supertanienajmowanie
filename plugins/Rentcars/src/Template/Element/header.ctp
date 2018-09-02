@@ -1,8 +1,17 @@
+<?php
+
+use Cake\Core\Configure;
+
+?>
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" title="Wynajem busów - Megatanienajmowanie" href="/">Megatanienajmowanie</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand js-scroll-trigger"
+           title="Wynajem busów -  <?php echo Configure::read('Promoted.menu'); ?>"
+           href="/"> <?php echo Configure::read('Promoted.menu'); ?></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -18,13 +27,16 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="header">
-                    Wynajem busów, wyjazdy zagraniczne z <span class="brand-color">Megatanienajmowanie</span>
+                    <?php echo Configure::read('Promoted.title'); ?>
                 </h1>
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consectetur doloremque laborum maiores nemo nobis quidem repudiandae sed tempore tenetur!</p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" title="Wynajmij bus - Megatanienajmowanie" href="#contact">Wynajmij bus</a>
+                <p class="text-faded mb-5">
+                    <?php echo Configure::read('Promoted.topSectionBody'); ?>
+                </p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" title="Wynajmij bus - Megatanienajmowanie"
+                   href="#contact">Wynajmij bus</a>
             </div>
         </div>
     </div>
