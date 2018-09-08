@@ -9,7 +9,7 @@ $(document).ready(function () {
       slidesToScroll: 1,
       autoplay: true,
       infinite: false,
-      dots: true,
+      dots: false,
       responsive: [{
         breakpoint: 1024,
         settings: {
@@ -31,5 +31,13 @@ $(document).ready(function () {
           settings: "unslick" // destroys slick
         }]
     });
+  });
+
+  $(window).scroll(function() {
+    if ($("#main-menu").offset().top > 100) {
+      $("#main-menu").addClass("navbar-shrink");
+    } else {
+      $("#main-menu").removeClass("navbar-shrink");
+    }
   });
 });
