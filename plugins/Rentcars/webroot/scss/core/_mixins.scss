@@ -1,0 +1,56 @@
+//@mixin transform-rotate($degrees) {
+//  -webkit-transform: rotate($degrees);
+//  -moz-transform: rotate($degrees);
+//  -ms-transform: rotate($degrees);
+//  -o-transform: rotate($degrees);
+//  transform: rotate($degrees);
+//}
+//
+//@mixin translateX($value) {
+//  -webkit-transform: translateX($value);
+//  transform: translateX($value);
+//}
+//
+//@mixin optional-at-root($sel) {
+//  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+//    @content;
+//  }
+//}
+//
+//@mixin placeholder {
+//  @include optional-at-root('::-webkit-input-placeholder') {
+//    @content;
+//  }
+//
+//  @include optional-at-root(':-moz-placeholder') {
+//    @content;
+//  }
+//
+//  @include optional-at-root('::-moz-placeholder') {
+//    @content;
+//  }
+//
+//  @include optional-at-root(':-ms-input-placeholder') {
+//    @content;
+//  }
+//}
+//
+//@mixin border-radius($value) {
+//  -webkit-border-radius: $value;
+//  -moz-border-radius: $value;
+//  border-radius: $value;
+//}
+//
+//@mixin element-color($color) {
+//  background-image: url('data:image/svg+xml;utf8,<svg width="9px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke"#{$color}">
+//    <g id="Menu-&amp;-Search" stroke-width="1" fill="none" fill-rule="evenodd">
+//        <g id="MENU-(1-step)---Extra-Small-Devices:-Phones---2-Col" transform="translate(-248.000000, -16.000000)" stroke-width="2">
+//            <g id="menu">
+//                <g id="go-to" transform="translate(249.000000, 17.000000)">
+//                    <polyline id="Path-3" points="0 0 6 5.52002703 0.0435368137 11"></polyline>
+//                </g>
+//            </g>
+//        </g>
+//    </g>
+//</svg>');
+//}
