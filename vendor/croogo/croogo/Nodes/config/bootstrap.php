@@ -24,7 +24,7 @@ Croogo::hookComponent('*', [
 ]);
 
 Croogo::hookHelper('*', 'Croogo/Nodes.Nodes');
-
+Croogo::hookHelper('*', 'Croogo/Nodes.Image2');
 // Configure Wysiwyg
 Wysiwyg::setActions([
     'Croogo/Nodes.Admin/Nodes/add' => [
