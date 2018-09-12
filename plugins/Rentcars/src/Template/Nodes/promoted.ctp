@@ -25,20 +25,22 @@ $phone = Configure::read('Promoted.contactPhone');
         </div>
     </div>
 </section>
-<section class="bg-dark text-white">
+<section class="bg-dark text-white p-0">
     <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-lg-6 no-padding home-about-left">
-                <img class="img-fluid" src="img/about-img.jpg" alt="">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 p-0 home-about-left">
+                <?php echo $this->Html->image('/img/1.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
             </div>
-            <div class="col-lg-6 no-padding home-about-right">
+            <div class="col-lg-6 home-about">
                 <h2 class="section-heading brand-color">
                     <?php echo $pages[0]->title;?>
                 </h2>
                 <p>
                     <?php echo $pages[0]->excerpt;?>
                 </p>
-                <a class="text-uppercase primary-btn" href="#">Zobacz szczegóły</a>
+                <div class="button-wrapper">
+                    <a class="text-uppercase primary-btn show-more" href="#">Zobacz szczegóły</a>
+                </div>
             </div>
         </div>
     </div>
