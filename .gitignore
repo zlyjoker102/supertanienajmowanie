@@ -4,6 +4,7 @@
 /config/.env
 /logs/*
 /tmp/*
+/plugins/Gallery/vendor/*
 
 
 # OS generated files #

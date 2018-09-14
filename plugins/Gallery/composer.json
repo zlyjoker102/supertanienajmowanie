@@ -1,0 +1,22 @@
+{
+    "name": "Gallery",
+    "description": "Plugin do tworzenia galerii",
+    "require": {
+        "croogo/core": "3.0.x-dev",
+        "cakephp/migrations": "~1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabryka w chmurach",
+            "email": "biuro@fabrykawchmurach.pl"
+        }
+    ],
+    "type": "cakephp-plugin",
+    "autoload": {
+        "psr-4": {
+            "Gallery\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
