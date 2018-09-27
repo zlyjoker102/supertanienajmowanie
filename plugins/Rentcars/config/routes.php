@@ -22,5 +22,5 @@
 //     // // Content types
 //     // Router::routableContentTypes($route);
 //     // Router::contentType('_placeholder', $route);
-    
+
 // });

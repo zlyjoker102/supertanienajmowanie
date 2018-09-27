@@ -1033,6 +1033,52 @@
         ]
     },
     {
+        "name": "croogo/ckeditor",
+        "version": "3.0.x-dev",
+        "version_normalized": "3.0.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/croogo/Ckeditor.git",
+            "reference": "93489df47495f8f3916a4f3696e39adf7174edca"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/croogo/Ckeditor/zipball/93489df47495f8f3916a4f3696e39adf7174edca",
+            "reference": "93489df47495f8f3916a4f3696e39adf7174edca",
+            "shasum": ""
+        },
+        "require": {
+            "croogo/croogo": "^3.0.4",
+            "php": ">=5.6.0"
+        },
+        "time": "2018-02-01T05:58:04+00:00",
+        "type": "cakephp-plugin",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Croogo\\Ckeditor\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rachman Chavik",
+                "email": "contact@xintesa.com",
+                "homepage": "http://xintesa.com"
+            },
+            {
+                "name": "Fahad Ibnay Heylall",
+                "email": "contact@fahad19.com",
+                "homepage": "http://fahad19.com"
+            }
+        ],
+        "description": "Integrate Ckeditor with Croogo",
+        "homepage": "http://github.com/croogo/ckeditor"
+    },
+    {
         "name": "croogo/croogo",
         "version": "3.0.5",
         "version_normalized": "3.0.5.0",

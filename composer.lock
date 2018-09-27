@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d738f28a08e7594d27a43dc1a1e1053",
+    "content-hash": "1044c6374ba3c2d5cc92b235013581ba",
     "packages": [
         {
             "name": "admad/cakephp-sequence",
@@ -375,6 +375,50 @@
             ],
             "description": "A composer installer for CakePHP 3.0+ plugins.",
             "time": "2017-12-24T21:09:29+00:00"
+        },
+        {
+            "name": "croogo/ckeditor",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/croogo/Ckeditor.git",
+                "reference": "93489df47495f8f3916a4f3696e39adf7174edca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/croogo/Ckeditor/zipball/93489df47495f8f3916a4f3696e39adf7174edca",
+                "reference": "93489df47495f8f3916a4f3696e39adf7174edca",
+                "shasum": ""
+            },
+            "require": {
+                "croogo/croogo": "^3.0.4",
+                "php": ">=5.6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Croogo\\Ckeditor\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rachman Chavik",
+                    "email": "contact@xintesa.com",
+                    "homepage": "http://xintesa.com"
+                },
+                {
+                    "name": "Fahad Ibnay Heylall",
+                    "email": "contact@fahad19.com",
+                    "homepage": "http://fahad19.com"
+                }
+            ],
+            "description": "Integrate Ckeditor with Croogo",
+            "homepage": "http://github.com/croogo/ckeditor",
+            "time": "2018-02-01T05:58:04+00:00"
         },
         {
             "name": "croogo/croogo",
@@ -3068,6 +3112,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "croogo/ckeditor": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,

@@ -22,10 +22,10 @@ class ComposerStaticInit43b3cbcb4e38384d922de2b4699f933c
         'ede59e3a405fb689cd1cebb7bb1db3fb' => __DIR__ . '/..' . '/cakephp/cakephp/src/Collection/functions.php',
         '90236b492da7ca2983a2ad6e33e4152e' => __DIR__ . '/..' . '/cakephp/cakephp/src/I18n/functions.php',
         'b1fc73705e1bec51cd2b20a32cf1c60a' => __DIR__ . '/..' . '/cakephp/cakephp/src/Utility/bootstrap.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'e80e30046ea6fdfe12005b11c3d7267e' => __DIR__ . '/..' . '/friendsofcake/crud/aliases.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '1c4220fa5ff9960d77c3609c3151c1d3' => __DIR__ . '/..' . '/croogo/croogo/Core/src/functions.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
     );
 
@@ -106,6 +106,7 @@ class ComposerStaticInit43b3cbcb4e38384d922de2b4699f933c
             'Croogo\\Contacts\\Test\\' => 21,
             'Croogo\\Contacts\\' => 16,
             'Croogo\\Comments\\' => 16,
+            'Croogo\\Ckeditor\\' => 16,
             'Croogo\\Blocks\\' => 14,
             'Croogo\\Acl\\' => 11,
             'Croogo\\' => 7,
@@ -324,6 +325,10 @@ class ComposerStaticInit43b3cbcb4e38384d922de2b4699f933c
         'Croogo\\Comments\\' => 
         array (
             0 => __DIR__ . '/..' . '/croogo/croogo/Comments/src',
+        ),
+        'Croogo\\Ckeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/croogo/ckeditor/src',
         ),
         'Croogo\\Blocks\\' => 
         array (

@@ -110,7 +110,7 @@ class NodesHelper extends Helper
     }
 
 /**
- * Filter content for Nodes
+ * Filteer content for Nodes
  *
  * Replaces [node:unique_name_for_query] or [n:unique_name_for_query] with Nodes list
  *

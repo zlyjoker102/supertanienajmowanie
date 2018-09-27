@@ -51,6 +51,24 @@ $this->start('tab-content');
                 'slug' => '_placeholder'
             ], ['fullbase' => true]))
         ]);
+
+//        $linkString = (string)$link->link;
+//        $linkOptions = [
+//            'value' => $linkKey,
+//            'text' => urldecode($linkKey),
+//            'selected' => true,
+//            'data-select2-tag' => "true",
+//        ];
+//
+//        echo $this->Form->input('link', [
+//            'label' => __d('croogo', 'Link'),
+//            'linkChooser' => true,
+//            'class' => 'no-select2 link-chooser',
+//            'type' => 'select',
+//            'multiple' => true,
+//            'options' => $linkOptions,
+//        ]);
+
         echo $this->Form->input('body', [
             'label' => __d('croogo', 'Body'),
             'id' => 'NodeBody',

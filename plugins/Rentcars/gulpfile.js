@@ -1,3 +1,4 @@
+
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
@@ -43,7 +44,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('default', function () {
-  console.log('Gulp is running correctly !!!!!!');
+  console.log('Gulp is running correctly !??!');
 
   gulp.start('sass');
   gulp.start('js');
