@@ -1,8 +1,8 @@
 /**
-* Pages list
+* Node list
 */
 
-.node-list {
+.views {
   padding-top: 0;
 
   .article{
@@ -12,7 +12,7 @@
   .header {
     padding: 40px 0;
 
-    h2 {
+    .page-title {
       margin-bottom: 0;
       text-transform: uppercase;
     }
@@ -55,5 +55,25 @@
         color: #fff;
       }
     }
+  }
+
+  .page-body{
+    padding: 30px 20px 60px;
+    background: #fff;
+  }
+}
+
+/**
+* Node view
+*/
+.page-view{
+  padding-top: 0;
+
+  .img-wrapper{
+    margin-bottom: 20px;
+  }
+
+  .header{
+    padding-left: 15px;
   }
 }

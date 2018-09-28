@@ -3,7 +3,7 @@
 use Cake\Core\Configure;
 
 $this->append('title');
-    echo Configure::read('Promoted.websiteName');
+echo Configure::read('Promoted.websiteName');
 $this->end();
 
 $pages = $nodes->toArray();
@@ -26,6 +26,7 @@ $phone = Configure::read('Promoted.contactPhone');
         </div>
     </div>
 </section>
+
 <section class="bg-dark text-white p-0">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
@@ -40,7 +41,7 @@ $phone = Configure::read('Promoted.contactPhone');
                     <?php echo $pages[0]->excerpt; ?>
                 </p>
                 <div class="button-wrapper">
-                    <a class="text-uppercase primary-btn show-more" href="#"><?php echo __('Zobacz szczegóły');?></a>
+                    <a class="text-uppercase primary-btn show-more" href="#"><?php echo __('Zobacz szczegóły'); ?></a>
                 </div>
             </div>
         </div>
@@ -59,96 +60,33 @@ $phone = Configure::read('Promoted.contactPhone');
 <section class="p-0" id="portfolio">
     <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="/img/1.jpg">
-                    <?php echo $this->Html->image('1.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="img/2.jpg">
-                    <?php echo $this->Html->image('2.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
+
+            <?php foreach ($news as $article) : ?>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="<?php echo '/aktualnosci/' . $article['slug']; ?>">
+                        <?php
+                        $imgSrc = $article['link'] ?? '/uploads/1.jpg';
+                        if ($imgSrc === 'value'){
+                            $imgSrc = '/uploads/trip.jpg';
+                        }
+                        echo $this->Html->image($this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(),[
+                                'class'=>'img-fluid'
+                            ]
+                        );
+                        ?>
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Zobacz
+                                </div>
+                                <div class="project-name">
+                                    <?php echo $article['title']; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="img/3.jpg">
-                    <?php echo $this->Html->image('3.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="img/4.jpg">
-                    <?php echo $this->Html->image('4.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="img/5.jpg">
-                    <?php echo $this->Html->image('5.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="img/6.jpg">
-                    <?php echo $this->Html->image('6.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

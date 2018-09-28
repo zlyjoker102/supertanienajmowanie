@@ -83,8 +83,8 @@ class NodesController extends AppController
                 $limit = $type->params['nodes_per_page'];
             }
             $query->andWhere([
-                    $this->Nodes->aliasField('type') => $type->alias,
-                ]);
+                $this->Nodes->aliasField('type') => $type->alias,
+            ]);
         }
 
         if (isset($limit)) {
@@ -159,11 +159,11 @@ class NodesController extends AppController
             $cacheKeys = ['type', $locale, $this->request->param('type')];
             $cacheKey = implode('_', $cacheKeys);
             $type = $this->Nodes->Taxonomies->Vocabularies->Types->find()
-            ->where([
-                'Types.alias' => $this->request->param('type'),
-            ])
-            ->cache($cacheKey, 'nodes_term')
-            ->firstOrFail();
+                ->where([
+                    'Types.alias' => $this->request->param('type'),
+                ])
+                ->cache($cacheKey, 'nodes_term')
+                ->firstOrFail();
 
             if (isset($type->params['nodes_per_page']) && empty($this->request->param('limit'))) {
                 $limit = $type->params['nodes_per_page'];
@@ -222,7 +222,6 @@ class NodesController extends AppController
      */
     public function promoted()
     {
-
         $query = $this->Nodes
             ->find('published')
             ->find('promoted')
@@ -237,6 +236,26 @@ class NodesController extends AppController
             ]);
         }
 
+        $news = $this->Nodes
+            ->find()
+            ->where([
+                'status !=' => 0,
+                'type' => 'aktualnosci'
+            ])
+            ->select([
+                'title',
+                'slug',
+                'excerpt',
+
+            ])
+            ->select([
+                'link'
+            ])
+            ->limit(6)
+            ->order(['created' => 'DESC'])
+            ->toArray();
+
+        $this->set('news', $news);
         $this->set('nodes', $this->Paginator->paginate($query));
     }
 
@@ -325,15 +344,15 @@ class NodesController extends AppController
                 'id' => $id,
                 'roleId' => $this->Croogo->roleId(),
             ])
-            ->firstOrFail();
+                ->firstOrFail();
             $cacheKeys = ['type', $locale, $node->type];
             $cacheKey = implode('_', $cacheKeys);
             $type = $this->Nodes->Taxonomies->Vocabularies->Types->find()
-            ->where([
-                'Types.alias' => $node->type,
-            ])
-            ->cache($cacheKey, 'nodes_view')
-            ->firstOrFail();
+                ->where([
+                    'Types.alias' => $node->type,
+                ])
+                ->cache($cacheKey, 'nodes_view')
+                ->firstOrFail();
         }
 
         if (!$node) {
@@ -348,6 +367,8 @@ class NodesController extends AppController
         $camelizedType = Inflector::camelize($type->alias, '-');
         $this->Croogo->viewFallback([
             'view/node_' . $node->id,
+            'view_' . $type->alias,
+            'view_' . $type->alias . "_". $node->slug,
             'view/' . str_replace('-', '_', $node->slug),
             $camelizedType . '/view',
         ]);

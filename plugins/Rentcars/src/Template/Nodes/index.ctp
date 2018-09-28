@@ -5,7 +5,7 @@ $firstNode = $nodes->first();
 
 ?>
 
-<section class="node-list">
+<section class="views">
     <div class="breadcrumbs-wrapper">
         <div class="container">
             <div class="row">
@@ -41,9 +41,9 @@ $firstNode = $nodes->first();
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>
+                    <h1 class="page-title">
                         Aktualności
-                    </h2>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -71,9 +71,23 @@ $firstNode = $nodes->first();
 
                     <article class="article <?php echo ($key === 0) ? 'col-12' : 'col-12 col-md-6'; ?>">
                         <?php
-                        $img = $node->link;
+                        $imgSrc = $node->link ?? '/uploads/6.jpg';
 
-                        echo $this->Html->image($img, ['alt' => '#', 'class' => 'img-fluid']);
+                        if ($imgSrc === 'value') {
+                            $imgSrc = '/uploads/6.jpg';
+                        }
+
+                        $width = '1100';
+                        $height = '50000';
+                        if ($key > 0) {
+                            $width = '10000';
+                            $height = '340';
+                        }
+
+                        echo $this->Html->image($this->Image2->source($imgSrc)->resizeit($width, $height)->imagePath(), [
+                            'class' => 'img-fluid',
+                            'alt' => $node->alt ?? '#'
+                        ]);
                         ?>
 
                         <h3 class="title"><?= $this->Html->link($this->Nodes->field('title'), $this->Nodes->field('url')->getUrl()) ?></h3>
@@ -81,7 +95,7 @@ $firstNode = $nodes->first();
                         <?php
                         echo $this->Nodes->info();
                         echo $this->Nodes->excerpt(['body' => true]);
-//                        echo $this->Nodes->moreInfo();
+                        //                        echo $this->Nodes->moreInfo();
                         ?>
                     </article>
 
