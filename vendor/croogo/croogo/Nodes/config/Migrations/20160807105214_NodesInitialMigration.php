@@ -27,6 +27,11 @@ class NodesInitialMigration extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
+            ->addColumn('link', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => false,
+            ])
             ->addColumn('body', 'text', [
                 'default' => null,
                 'limit' => null,
