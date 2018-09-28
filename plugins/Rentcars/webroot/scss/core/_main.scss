@@ -7,7 +7,14 @@ html {
 
 body {
   font-family: $font-family;
+
+  > .wrapper {
+    padding-top: 57px;
+    min-height: calc(100vh - 78px);
+  }
 }
+
+
 
 hr {
   max-width: 120px;
@@ -419,7 +426,7 @@ header.masthead {
   margin-bottom: 30px;
   text-align: left;
   transition: all 0.3s ease-in-out;
-  box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.5);
+  box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.3);
 
   h3 {
     font-size: 18px;
@@ -487,6 +494,25 @@ footer {
 }
 
 /**
+* Breadcrumbs
+*/
+.breadcrumbs-wrapper{
+  background: #fff;
+
+  .breadcrumb{
+    font-size: 12px;
+    background: none;
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+    span{
+      text-align: center;
+      padding: 0 3px;
+    }
+  }
+}
+
+/**
 * Contact View
 */
 .contact-view {
@@ -494,6 +520,7 @@ footer {
     font-size: 30px;
     margin-bottom: 30px;
   }
+
   .contact-wrapper {
     font-size: 16px;
     margin-bottom: 30px;
@@ -503,6 +530,7 @@ footer {
     }
   }
 
+  header
   .form-control {
     &:focus {
       border-color: #b78806;

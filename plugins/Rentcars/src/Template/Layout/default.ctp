@@ -1,3 +1,9 @@
+<?php
+
+use Cake\Core\Configure;
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +25,7 @@
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="icon" href="/img/favicon.png">
-    <title><?= $this->fetch('title'); ?> – Megatanienajmowanie</title>
+    <title><?= $this->fetch('title'); ?> – <?php echo Configure::read('Promoted.websiteName'); ?></title>
 
     <?php
     echo $this->Meta->meta();
@@ -39,27 +45,44 @@
     ?>
 </head>
 <body id="page-top">
-<?php
-// debug($title_for_layout);
-echo $this->Layout->sessionFlash();
+<div class="wrapper">
+    <?php
+    echo $this->Layout->sessionFlash();
 
-echo $this->Element('header');
-echo $this->Element('socialBar');
-echo $this->fetch('content');
+    echo $this->Element('header');
+    echo $this->Element('socialBar');
+
+    echo $this->fetch('content');
+    ?>
+</div>
+<div class="push"></div>
+
+<?php
 echo $this->Element('footer');
 ?>
 
 <?php
-
 //echo $this->Menus->menu('main', array('dropdown' => true));
 // $this->Regions->blocks('right');
 ?>
-
 
 <?php
 echo $this->Html->script(array(
     '/js/app.min.js',
 ));
 ?>
+
+<script>
+    // $(document).ready(function(){
+    //     $(window).resize(function(){
+    //         var footerHeight = $('.footer').outerHeight();
+    //         var stickFooterPush = $('.push').height(footerHeight);
+    //
+    //         $('.wrapper').css({'marginBottom':'-' + footerHeight + 'px'});
+    //     });
+    //
+    //     $(window).resize();
+    // });
+</script>
 </body>
 </html>

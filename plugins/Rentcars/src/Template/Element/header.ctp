@@ -9,8 +9,8 @@ $navSpecialClass = ($this->request->params['action'] != 'promoted') ? 'navbar-pr
          id="main-menu">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger"
-               title="Wynajem busów -  <?php echo Configure::read('Promoted.menu'); ?>"
-               href="/"> <?php echo Configure::read('Promoted.menu'); ?></a>
+               title="Wynajem busów -  <?php echo Configure::read('Promoted.websiteName'); ?>"
+               href="/"> <?php echo Configure::read('Promoted.websiteName'); ?></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -41,7 +41,7 @@ if ($this->request->params['action'] == 'promoted'):
                     <p class="text-faded mb-5">
                         <?php echo Configure::read('Promoted.topSectionBody'); ?>
                     </p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" title="Wynajmij bus - Supertaniewynajmowanie"
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" title="Wynajmij bus - <?php echo Configure::read('Promoted.websiteName'); ?>"
                        href="#contact">Wynajmij bus</a>
                 </div>
             </div>

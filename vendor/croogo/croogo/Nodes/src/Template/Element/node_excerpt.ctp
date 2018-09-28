@@ -1,16 +1,24 @@
 <?php if (isset($excerpt)): ?>
-<div class="node-excerpt my-2">
-    <?= $excerpt ?>
-    <div class="text-right">
-    <?=
-        $this->Html->link(__d('croogo', 'Read'), [
+    <?php
+    echo $this->Text->truncate(
+        $excerpt,
+        250,
+        [
+            'ellipsis' => '...',
+            'exact' => false
+        ]
+    );
+    ?>
+
+    <div class="button-wrapper">
+        <?=
+        $this->Html->link(__d('croogo', 'Zobacz więcej'), [
             'action' => 'view',
             'type' => $node->type,
             'slug' => $node->slug,
         ], [
-            'class' => 'btn btn-sm btn-outline-info',
+            'class' => 'btn btn-primary',
         ])
-    ?>
+        ?>
     </div>
-</div>
 <?php endif ?>

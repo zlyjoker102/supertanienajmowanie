@@ -33,6 +33,12 @@ $(document).ready(function () {
     });
   });
 
+    // $( document ).ready(function() {
+    //     setTimeout(function() {
+    //         $('div.message').fadeOut('fast');
+    //     }, 5000);
+    // });
+
   $(window).scroll(function() {
     if ($("#main-menu").offset().top > 100) {
       $("#main-menu").addClass("navbar-shrink");

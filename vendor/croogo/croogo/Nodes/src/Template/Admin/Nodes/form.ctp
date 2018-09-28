@@ -5,6 +5,7 @@ use Cake\Routing\Router;
 $this->assign('title', $node->title);
 
 $this->extend('Croogo/Core./Common/admin_edit');
+$this->Croogo->adminScript('Croogo/Menus.admin');
 $this->Html->script(array('Croogo/Nodes.admin'), ['block' => true]);
 
 $this->Breadcrumbs->add(__d('croogo', 'Content'), ['action' => 'index']);
@@ -43,13 +44,26 @@ $this->start('tab-content');
         ]);
         echo $this->Form->input('slug', [
             'class' => 'slug',
-            'label' => __d('croogo', 'Permalink'),
+            'label' => __d('croogo', 'Ładny link(Slug)'),
             'prepend' => str_replace('_placeholder', '', $this->Url->build([
                 'prefix' => false,
                 'action' => 'view',
                 'type' => $type->alias,
                 'slug' => '_placeholder'
             ], ['fullbase' => true]))
+        ]);
+
+        echo $this->Form->input('link', [
+            'label' => __d('croogo', 'Zdjęcie główne'),
+            'linkChooser' => true,
+            'class' => 'no-select2 link-chooser',
+            'type' => 'select',
+            'empty' =>false,
+//            'multiple' => true,
+            'required' => true,
+            'options' => [
+                'value' => $node->link ?? '',
+            ]
         ]);
         echo $this->Form->input('body', [
             'label' => __d('croogo', 'Body'),

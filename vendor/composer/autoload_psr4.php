@@ -53,6 +53,7 @@ return array(
     'Croogo\\Contacts\\Test\\' => array($vendorDir . '/croogo/croogo/Contacts/tests'),
     'Croogo\\Contacts\\' => array($vendorDir . '/croogo/croogo/Contacts/src'),
     'Croogo\\Comments\\' => array($vendorDir . '/croogo/croogo/Comments/src'),
+    'Croogo\\Ckeditor\\' => array($vendorDir . '/croogo/ckeditor/src'),
     'Croogo\\Blocks\\' => array($vendorDir . '/croogo/croogo/Blocks/src'),
     'Croogo\\Acl\\' => array($vendorDir . '/croogo/croogo/Acl/src'),
     'Croogo\\' => array($vendorDir . '/croogo/croogo/src'),

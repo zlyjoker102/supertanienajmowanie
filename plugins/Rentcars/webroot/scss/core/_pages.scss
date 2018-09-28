@@ -1,0 +1,59 @@
+/**
+* Pages list
+*/
+
+.node-list {
+  padding-top: 0;
+
+  .article{
+    margin-bottom: 50px;
+  }
+
+  .header {
+    padding: 40px 0;
+
+    h2 {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .title {
+    padding: 15px 0;
+
+    a {
+      color: #212529;
+      font-size: 23px;
+    }
+  }
+
+  .btn-primary {
+    padding: 8px 30px;
+    font-size: 12px;
+    text-transform: none;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 20px;
+  }
+
+  .page-item {
+    .page-link {
+      color: #212529;
+      box-shadow: none;
+    }
+
+    &.active {
+      .page-link {
+        background-color: #b98700;
+        border-color: #b98700;
+        color: #fff;
+      }
+    }
+  }
+}

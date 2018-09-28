@@ -1,8 +1,9 @@
 <?php
+
 use Cake\Core\Configure;
 
 $this->append('title');
-echo 'Supertanienajmowanie';
+    echo Configure::read('Promoted.websiteName');
 $this->end();
 
 $pages = $nodes->toArray();
@@ -14,14 +15,14 @@ $phone = Configure::read('Promoted.contactPhone');
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading brand-color">Nasz oferta</h2>
+                <h2 class="section-heading brand-color"> <?php echo __('Nasza oferta'); ?> </h2>
                 <hr class="my-4">
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <?php echo $this->Regions->blocks('co-oferujemy-naszym-klientom');  ?>
+            <?php echo $this->Regions->blocks('co-oferujemy-naszym-klientom'); ?>
         </div>
     </div>
 </section>
@@ -33,13 +34,13 @@ $phone = Configure::read('Promoted.contactPhone');
             </div>
             <div class="col-lg-6 home-about">
                 <h2 class="section-heading brand-color">
-                    <?php echo $pages[0]->title;?>
+                    <?php echo $pages[0]->title; ?>
                 </h2>
                 <p>
-                    <?php echo $pages[0]->excerpt;?>
+                    <?php echo $pages[0]->excerpt; ?>
                 </p>
                 <div class="button-wrapper">
-                    <a class="text-uppercase primary-btn show-more" href="#">Zobacz szczegóły</a>
+                    <a class="text-uppercase primary-btn show-more" href="#"><?php echo __('Zobacz szczegóły');?></a>
                 </div>
             </div>
         </div>
@@ -48,8 +49,9 @@ $phone = Configure::read('Promoted.contactPhone');
 <section class="reviews">
     <div class="container text-center">
         <h2 class="section-heading brand-color">opinie naszych klientów</h2>
+        <hr>
         <div id="reviews" class="mx-auto col-md-8 col-lg-10 text-center">
-            <?php echo $this->Regions->blocks('opinie-naszych-klientow');?>
+            <?php echo $this->Regions->blocks('opinie-naszych-klientow'); ?>
         </div>
 
     </div>
