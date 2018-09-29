@@ -31,15 +31,24 @@ $phone = Configure::read('Promoted.contactPhone');
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-6 p-0 home-about-left">
+
                 <?php echo $this->Html->image('/img/1.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
+<!--                --><?php
+//                echo $this->Html->image($this->Image2->source($imgSrc)->resizeit($width, $height)->imagePath(), [
+//                    'class' => 'img-fluid',
+//                    'alt' => $node->alt ?? '#'
+//                ]);
+//                ?>
             </div>
             <div class="col-lg-6 home-about">
-                <h2 class="section-heading brand-color">
-                    <?php echo $pages[0]->title; ?>
-                </h2>
-                <p>
-                    <?php echo $pages[0]->excerpt; ?>
-                </p>
+                <div class="about">
+                    <h2 class="section-heading brand-color">
+                        <?php echo $pages[0]->title; ?>
+                    </h2>
+                    <p>
+                        <?php echo $pages[0]->excerpt; ?>
+                    </p>
+                </div>
                 <div class="button-wrapper">
                     <a class="text-uppercase primary-btn show-more" href="#"><?php echo __('Zobacz szczegóły'); ?></a>
                 </div>
@@ -66,11 +75,11 @@ $phone = Configure::read('Promoted.contactPhone');
                     <a class="portfolio-box" href="<?php echo '/aktualnosci/' . $article['slug']; ?>">
                         <?php
                         $imgSrc = $article['link'] ?? '/uploads/1.jpg';
-                        if ($imgSrc === 'value'){
+                        if ($imgSrc === 'value') {
                             $imgSrc = '/uploads/trip.jpg';
                         }
-                        echo $this->Html->image($this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(),[
-                                'class'=>'img-fluid'
+                        echo $this->Html->image($this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(), [
+                                'class' => 'img-fluid'
                             ]
                         );
                         ?>
