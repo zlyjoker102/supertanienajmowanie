@@ -8,7 +8,7 @@ use Cake\Core\Configure;
 if (!isset($contact)):
     ?>
     <span class="pulse">
-    <a href="/contact">
+    <a href="/kontakt">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40"><style>.a {
                 }</style><path
                     d="M20 2c9.9 0 18 8.1 18 18s-8.1 18-18 18c-9.9 0-18-8.1-18-18S10.1 2 20 2M20 0C9 0 0 9 0 20c0 11 9 20 20 20 11 0 20-9 20-20C40 9 31 0 20 0L20 0z"

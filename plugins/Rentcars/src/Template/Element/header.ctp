@@ -21,34 +21,31 @@ $phoneIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139">
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <?php
-                echo $this->Menus->menu('main', ['dropdown' => true, 'dropdownClass' => 'navbar-nav ml-auto']);
+                echo $this->Menus->menu('main', ['dropdown' => true, 'dropdownClass' => 'navbar-nav']);
                 ?>
-            </div>
-            <div class="contact-block">
-                <ul>
-                    <li title="Szybki kontakt">
-                        <?php echo $phoneIcon; ?>
-                        Zadźwoń teraz
-                    </li>
-                    <li>
-                        <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
-                            <?php echo Configure::read('Promoted.contactPhone'); ?>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone2'); ?>">
-                            <?php echo Configure::read('Promoted.contactPhone2'); ?>
-                        </a>
-                    </li>
-                    <li class="tooltip-wrapper">
-                        <span class="tooltiptext">Zadzwoń i dowiedz się jak możemy Ci pomóc.</span>
-                    </li>
-                </ul>
-                <!--                <div class="tooltip  bottom in" style=" display: block; right: 0;">-->
-                <!--                    <div class="tooltip-arrow" style="    border-bottom-color: rgba(197, 16, 118, 0.6)"></div>-->
-                <!--                    <div class="tooltip-inner" style="background: rgba(197, 16, 118, 0.6)">Zadzwoń, dowiedz się jak możemy Ci pomóc-->
-                <!--                        bezpiecznie kupić mieszkanie.</div>-->
-                <!--                </div>-->
+                <?php if (!isset($contact)):?>
+                    <div class="contact-block">
+                        <ul>
+                            <li title="Szybki kontakt">
+                                <?php echo $phoneIcon; ?>
+                                Zadźwoń teraz
+                            </li>
+                            <li>
+                                <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
+                                    <?php echo Configure::read('Promoted.contactPhone'); ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone2'); ?>">
+                                    <?php echo Configure::read('Promoted.contactPhone2'); ?>
+                                </a>
+                            </li>
+                            <li class="tooltip-wrapper">
+                                <span class="tooltiptext">Zadzwoń i dowiedz się jak możemy Ci pomóc.</span>
+                            </li>
+                        </ul>
+                    </div>
+                <?php endif;?>
             </div>
         </div>
     </nav>
