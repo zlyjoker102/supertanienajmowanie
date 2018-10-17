@@ -17,35 +17,41 @@ $phoneIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                     aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" data-name="Livello 1" viewBox="0 0 128 128">
+                    <path d="M64 0a64 64 0 1 0 64 64A64.1 64.1 0 0 0 64 0Zm0 122a58 58 0 1 1 58-58A58.1 58.1 0 0 1 64 122Z"/>
+                    <path d="M90 61H38a3 3 0 0 0 0 6H90a3 3 0 0 0 0-6Z"/>
+                    <path d="M90 74H38a3 3 0 0 0 0 6H90a3 3 0 0 0 0-6Z"/>
+                    <path d="M90 48H38a3 3 0 0 0 0 6H90a3 3 0 0 0 0-6Z"/>
+                </svg>
+
             </button>
+            <?php if (!isset($contact)): ?>
+                <div class="contact-block">
+                    <ul>
+                        <li title="Szybki kontakt">
+                            <?php echo $phoneIcon; ?>
+                        </li>
+                        <li>
+                            <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
+                                <?php echo Configure::read('Promoted.contactPhone'); ?>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/kontakt"
+                               title="Telefon: <?php echo Configure::read('Promoted.contactPhone2'); ?>">
+                                <?php echo Configure::read('Promoted.contactPhone2'); ?>
+                            </a>
+                        </li>
+                        <li class="tooltip-wrapper d-none">
+                            <span class="tooltiptext">Zadzwoń i dowiedź się jak możemy Ci pomóc.</span>
+                        </li>
+                    </ul>
+                </div>
+            <?php endif; ?>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <?php
                 echo $this->Menus->menu('main', ['dropdown' => true, 'dropdownClass' => 'navbar-nav']);
                 ?>
-                <?php if (!isset($contact)):?>
-                    <div class="contact-block">
-                        <ul>
-                            <li title="Szybki kontakt">
-                                <?php echo $phoneIcon; ?>
-                                Zadźwoń teraz
-                            </li>
-                            <li>
-                                <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
-                                    <?php echo Configure::read('Promoted.contactPhone'); ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone2'); ?>">
-                                    <?php echo Configure::read('Promoted.contactPhone2'); ?>
-                                </a>
-                            </li>
-                            <li class="tooltip-wrapper">
-                                <span class="tooltiptext">Zadzwoń i dowiedz się jak możemy Ci pomóc.</span>
-                            </li>
-                        </ul>
-                    </div>
-                <?php endif;?>
             </div>
         </div>
     </nav>
@@ -58,7 +64,7 @@ if ($this->request->params['action'] == 'promoted'):
         <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-12 mx-auto">
-                    <h1 class="header">
+                    <h1 class="header text-center">
                         <?php echo Configure::read('Promoted.title'); ?>
                     </h1>
                     <hr>

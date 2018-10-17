@@ -33,12 +33,12 @@ $phone = Configure::read('Promoted.contactPhone');
             <div class="col-lg-6 p-0 home-about-left">
 
                 <?php echo $this->Html->image('/img/1.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-<!--                --><?php
-//                echo $this->Html->image($this->Image2->source($imgSrc)->resizeit($width, $height)->imagePath(), [
-//                    'class' => 'img-fluid',
-//                    'alt' => $node->alt ?? '#'
-//                ]);
-//                ?>
+                <!--                --><?php
+                //                echo $this->Html->image($this->Image2->source($imgSrc)->resizeit($width, $height)->imagePath(), [
+                //                    'class' => 'img-fluid',
+                //                    'alt' => $node->alt ?? '#'
+                //                ]);
+                //                ?>
             </div>
             <div class="col-lg-6 home-about">
                 <div class="about">
@@ -50,7 +50,7 @@ $phone = Configure::read('Promoted.contactPhone');
                     </p>
                 </div>
                 <div class="button-wrapper">
-                    <a class="text-uppercase primary-btn show-more" href="#"><?php echo __('Zobacz szczegóły'); ?></a>
+                    <a class="text-uppercase primary-btn show-more" href="/strona/wynajmij-auto-na-eventy"><?php echo __('Zobacz szczegóły'); ?></a>
                 </div>
             </div>
         </div>
@@ -71,18 +71,15 @@ $phone = Configure::read('Promoted.contactPhone');
         <div class="row no-gutters popup-gallery">
 
             <?php foreach ($news as $article) : ?>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="<?php echo '/aktualnosci/' . $article['slug']; ?>">
-                        <?php
-                        $imgSrc = $article['link'] ?? '/uploads/1.jpg';
-                        if ($imgSrc === 'value') {
-                            $imgSrc = '/uploads/trip.jpg';
-                        }
-                        echo $this->Html->image($this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(), [
-                                'class' => 'img-fluid'
-                            ]
-                        );
-                        ?>
+                <div class="col-lg-4 col-sm-6 col-xs-12 news-box">
+                    <?php
+                    $imgSrc = $article['link'] ?? '/uploads/1.jpg';
+                    if ($imgSrc === 'value') {
+                        $imgSrc = '/uploads/trip.jpg';
+                    }
+                    ?>
+                    <a class="portfolio-box" href="<?php echo '/aktualnosci/' . $article['slug']; ?>"
+                       style="background: url('<?php echo $this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(); ?>')">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
