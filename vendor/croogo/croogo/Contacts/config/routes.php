@@ -12,6 +12,6 @@ Router::plugin('Croogo/Contacts', ['path' => '/'], function (RouteBuilder $route
         });
     });
 
-    Router::build($route, '/contact', ['controller' => 'Contacts', 'action' => 'view', 'contact']);
-    Router::build($route, '/contact/*', ['controller' => 'Contacts', 'action' => 'view']);
+    Router::build($route, '/kontakt', ['controller' => 'Contacts', 'action' => 'view', 'contact']);
+    Router::build($route, '/kontakt/*', ['controller' => 'Contacts', 'action' => 'view']);
 });

@@ -13,9 +13,9 @@ use Cake\Core\Configure;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php
-    echo $this->Element('ogMeta');
-    ?>
+<!--    --><?php
+//    echo $this->Element('ogMeta');
+//    ?>
 
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,900&amp;subset=latin-ext"
           rel="stylesheet">
