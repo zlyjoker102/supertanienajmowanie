@@ -29,15 +29,15 @@ $phoneIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139">
                 <div class="contact-block">
                     <ul>
                         <li title="Szybki kontakt">
-                            <?php echo $phoneIcon; ?>
+                            <a href="/kontakt"><?php echo $phoneIcon; ?></a>
                         </li>
                         <li>
-                            <a href="/kontakt" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
+                            <a href="tel:<?php echo Configure::read('Promoted.contactPhone'); ?>" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
                                 <?php echo Configure::read('Promoted.contactPhone'); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="/kontakt"
+                            <a href="tel:<?php echo Configure::read('Promoted.contactPhone2'); ?>"
                                title="Telefon: <?php echo Configure::read('Promoted.contactPhone2'); ?>">
                                 <?php echo Configure::read('Promoted.contactPhone2'); ?>
                             </a>
