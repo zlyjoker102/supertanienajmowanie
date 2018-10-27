@@ -3,10 +3,10 @@
     $type = $typesForLayout[$this->Nodes->field('type')];
 
     if ($type->format_show_author || $type->format_show_date) {
-        echo __d('croogo', 'Posted');
+        echo __d('croogo', 'Dodano: ');
     }
     if ($type->format_show_author) {
-        echo ' ' . __d('croogo', 'by') . ' ';
+        echo ' ' . __d('croogo', 'przez') . ' ';
         if ($this->Nodes->field('user.website') != null) {
             $author = $this->Html->link($this->Nodes->field('user.name'), $this->Nodes->field('user.website'));
         } else {
@@ -19,7 +19,6 @@
     }
     if ($type->format_show_date) {
         $nodeDate = $this->Nodes->field('publish_start') ?: $this->Nodes->field('created');
-        echo ' ' . __d('croogo', 'on') . ' ';
         echo $this->Html->tag('span', $this->Nodes->date($nodeDate), ['class' => 'date']);
     }
 ?>

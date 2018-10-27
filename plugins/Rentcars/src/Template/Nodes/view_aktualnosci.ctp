@@ -10,9 +10,8 @@ if ($type->show_breadcrumbs == 1) {
     $this->Breadcrumbs
         ->add(__d('croogo', $node['title']));
 }
-//debug($node);
 ?>
-<section class="views page-view">
+<section class="views page-view news-view">
     <div class="breadcrumbs-wrapper">
         <div class="container">
             <div class="row">

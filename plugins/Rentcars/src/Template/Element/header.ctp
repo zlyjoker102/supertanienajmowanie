@@ -1,16 +1,31 @@
 <?php
 
 use Cake\Core\Configure;
-
+$phone1 = Configure::read('Promoted.contactPhone');
+$phone2 = Configure::read('Promoted.contactPhone2');
 $navSpecialClass = ($this->request->params['action'] != 'promoted') ? 'navbar-primary' : '';
-$phoneIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139">
-    <path d="M67.3 82c-9.3-7.6-15.5-17.1-18.7-22.4l-2.4-4.6c0.9-0.9 7.3-7.9 10.1-11.6 3.5-4.7-1.6-9-1.6-9S40.3 19.9 37 17.1c-3.3-2.9-7.1-1.3-7.1-1.3 -6.9 4.5-14 8.3-14.5 27C15.5 60.2 28.7 78.2 43 92.1c14.3 15.7 34 31.5 53.1 31.5 18.6-0.4 22.5-7.6 27-14.5 0 0 1.6-3.8-1.3-7.1 -2.9-3.3-17.3-17.7-17.3-17.7s-4.3-5.1-9-1.6c-3.5 2.6-9.9 8.5-11.4 9.9C84.2 92.7 73.6 87.1 67.3 82z"/>
-</svg>';
+$phoneIcon = '<svg height="30" viewBox="0 0 40 40" width="40"><path d="M20 2c9.9 0 18 8.1 18 18s-8.1 18-18 18c-9.9 0-18-8.1-18-18S10.1 2 20 2M20 0C9 0 0 9 0 20c0 11 9 20 20 20 11 0 20-9 20-20C40 9 31 0 20 0L20 0z" class="a"/><path d="M14.4 9.8c1.2-0.2 2 1.1 2.6 2.1 0.6 0.9 1.3 2 1 3.2 -0.2 0.7-0.8 1-1.2 1.4 -0.4 0.4-1.1 0.7-1.3 1.3 -0.3 1 0.3 2 0.7 2.6 0.8 1.3 1.8 2.5 3.1 3.5 0.6 0.5 1.5 1.2 2.4 1 1.3-0.3 1.6-1.9 3-2.1 1.3-0.2 2.3 0.8 3 1.4 0.7 0.6 1.9 1.4 1.8 2.5 0 0.6-0.5 1-1 1.4 -0.4 0.4-0.8 0.8-1.3 1.1 -1.1 0.7-2.3 1-3.8 1 -1.5 0-2.6-0.5-3.7-1.1 -2.1-1.1-3.7-2.6-5.2-4.3 -1.5-1.7-2.9-3.7-3.7-5.9 -1-2.8-0.5-5.6 1.1-7.4 0.3-0.3 0.7-0.6 1.1-0.9C13.5 10.3 13.8 9.9 14.4 9.8z" class="a"/></svg>';
 ?>
 
-    <nav class="navbar navbar-expand-lg fixed-top <?php echo $navSpecialClass; ?>"
-         id="main-menu">
-        <div class="container position-relative">
+    <nav class="navbar-expand-lg fixed-top <?php echo $navSpecialClass; ?>" id="main-menu">
+         <div class="social-bar">
+            <div class="container">
+                <div class="row">
+                    <ul class="col-12">
+                        <li>
+
+                        </li>
+                        <li>
+                            <a href="tel:<?php echo $phone1; ?>"><?php echo $phoneIcon . "" . $phone1; ?></a>
+                        </li>
+                        <li>
+                        <a href="tel:<?php echo $phone2; ?>"><?php echo $phoneIcon . "" . $phone2; ?></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+        <div class="container navbar">
             <a class="navbar-brand js-scroll-trigger"
                title="Wynajem busów -  <?php echo Configure::read('Promoted.websiteName'); ?>"
                href="/"> <?php echo Configure::read('Promoted.websiteName'); ?></a>
@@ -25,29 +40,6 @@ $phoneIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139">
                 </svg>
 
             </button>
-            <?php if (!isset($contact)): ?>
-                <div class="contact-block">
-                    <ul>
-                        <li title="Szybki kontakt">
-                            <a href="/kontakt"><?php echo $phoneIcon; ?></a>
-                        </li>
-                        <li>
-                            <a href="tel:<?php echo Configure::read('Promoted.contactPhone'); ?>" title="Telefon: <?php echo Configure::read('Promoted.contactPhone'); ?>">
-                                <?php echo Configure::read('Promoted.contactPhone'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tel:<?php echo Configure::read('Promoted.contactPhone2'); ?>"
-                               title="Telefon: <?php echo Configure::read('Promoted.contactPhone2'); ?>">
-                                <?php echo Configure::read('Promoted.contactPhone2'); ?>
-                            </a>
-                        </li>
-                        <li class="tooltip-wrapper d-none">
-                            <span class="tooltiptext">Zadzwoń i dowiedź się jak możemy Ci pomóc.</span>
-                        </li>
-                    </ul>
-                </div>
-            <?php endif; ?>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <?php
                 echo $this->Menus->menu('main', ['dropdown' => true, 'dropdownClass' => 'navbar-nav']);
@@ -58,7 +50,7 @@ $phoneIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139">
 
 <?php
 if ($this->request->params['action'] == 'promoted'):
-    ?>
+?>
     <header class="masthead text-center text-white d-flex">
         <div class="overlay overlay-bg"></div>
         <div class="container my-auto">
@@ -74,10 +66,10 @@ if ($this->request->params['action'] == 'promoted'):
                         <?php echo Configure::read('Promoted.topSectionBody'); ?>
                     </p>
                     <a class="btn btn-primary btn-xl js-scroll-trigger"
-                       title="Wynajmij bus - <?php echo Configure::read('Promoted.websiteName'); ?>"
-                       href="#contact">Wynajmij bus</a>
+                       title="Wynajmij busa - <?php echo Configure::read('Promoted.websiteName'); ?>"
+                       href="#contact">Wynajmij busa</a>
                 </div>
             </div>
         </div>
     </header>
-<?php endif; ?>
+<?php endif;?>
