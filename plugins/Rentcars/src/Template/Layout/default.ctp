@@ -33,16 +33,9 @@ use Cake\Core\Configure;
     echo $this->Html->css(array(
         '/css/style.css',
     ));
-    echo $this->Layout->js();
-    echo $this->Html->script(array(
-        '/js/app.min.js',
-    ));
     ?>
 
-    <?php
-    echo $this->Blocks->get('css');
-    echo $this->Blocks->get('script');
-    ?>
+
 </head>
 <body id="page-top">
 <div class="wrapper">
@@ -50,7 +43,7 @@ use Cake\Core\Configure;
     echo $this->Layout->sessionFlash();
 
     echo $this->Element('header');
-    echo $this->Element('socialBar');
+    // echo $this->Element('socialBar');
 
     echo $this->fetch('content');
     ?>
@@ -59,30 +52,11 @@ use Cake\Core\Configure;
 
 <?php
 echo $this->Element('footer');
-?>
 
-<?php
-//echo $this->Menus->menu('main', array('dropdown' => true));
-// $this->Regions->blocks('right');
-?>
-
-<?php
 echo $this->Html->script(array(
     '/js/app.min.js',
 ));
 ?>
 
-<script>
-    // $(document).ready(function(){
-    //     $(window).resize(function(){
-    //         var footerHeight = $('.footer').outerHeight();
-    //         var stickFooterPush = $('.push').height(footerHeight);
-    //
-    //         $('.wrapper').css({'marginBottom':'-' + footerHeight + 'px'});
-    //     });
-    //
-    //     $(window).resize();
-    // });
-</script>
 </body>
 </html>

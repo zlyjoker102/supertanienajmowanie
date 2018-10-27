@@ -9,6 +9,7 @@ $this->end();
 $pages = $nodes->toArray();
 $email = Configure::read('Promoted.contactEmail');
 $phone = Configure::read('Promoted.contactPhone');
+$phone2 = Configure::read('Promoted.contactPhone2');
 ?>
 
 <section id="services">
@@ -32,13 +33,12 @@ $phone = Configure::read('Promoted.contactPhone');
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-6 p-0 home-about-left">
 
-                <?php echo $this->Html->image('/img/1.jpg', ['alt' => '#', 'class' => 'img-fluid']); ?>
-                <!--                --><?php
-                //                echo $this->Html->image($this->Image2->source($imgSrc)->resizeit($width, $height)->imagePath(), [
-                //                    'class' => 'img-fluid',
-                //                    'alt' => $node->alt ?? '#'
-                //                ]);
-                //                ?>
+            <?php
+                echo $this->Html->image($this->Image2->source($pages[0]->link)->resizeit(5000, 600)->imagePath(), [
+                    'class' => 'img-fluid',
+                    'alt' => $node->alt ?? '#',
+                ]);
+            ?>
             </div>
             <div class="col-lg-6 home-about">
                 <div class="about">
@@ -70,16 +70,16 @@ $phone = Configure::read('Promoted.contactPhone');
     <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
 
-            <?php foreach ($news as $article) : ?>
+            <?php foreach ($news as $article): ?>
                 <div class="col-lg-4 col-sm-6 col-xs-12 news-box">
                     <?php
-                    $imgSrc = $article['link'] ?? '/uploads/1.jpg';
-                    if ($imgSrc === 'value') {
-                        $imgSrc = '/uploads/trip.jpg';
-                    }
-                    ?>
+$imgSrc = $article['link'] ?? '/uploads/1.jpg';
+if ($imgSrc === 'value') {
+    $imgSrc = '/uploads/trip.jpg';
+}
+?>
                     <a class="portfolio-box" href="<?php echo '/aktualnosci/' . $article['slug']; ?>"
-                       style="background: url('<?php echo $this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(); ?>')">
+                       style="background: url('<?php echo $this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(); ?>')no-repeat center center; background-size: cover;">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -92,7 +92,7 @@ $phone = Configure::read('Promoted.contactPhone');
                         </div>
                     </a>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;?>
         </div>
     </div>
 </section>
@@ -113,7 +113,7 @@ $phone = Configure::read('Promoted.contactPhone');
         <div class="row">
             <div class="col-lg-4 ml-auto text-center">
                 <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-                <p><?php echo $phone; ?></p>
+                <p><?php echo $phone; ?> <br> <?php echo $phone2; ?></p>
             </div>
             <div class="col-lg-4 mr-auto text-center">
                 <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
@@ -126,7 +126,4 @@ $phone = Configure::read('Promoted.contactPhone');
         </div>
     </div>
 </section>
-
-<!--    --><?php //echo  $this->Element('newsletter'); ?>
-<!--                --><?php //echo $this->Regions->blocks('sponsorzy-gora');?><!--</div>-->
 

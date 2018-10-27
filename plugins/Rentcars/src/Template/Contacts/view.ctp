@@ -1,4 +1,9 @@
-<?php use Cake\Core\Configure; ?>
+<?php 
+use Cake\Core\Configure; 
+$this->append('title');
+    echo 'Kontakt';
+$this->end();
+?>
 
 <section class="contact-view">
     <div class="container">
@@ -18,6 +23,7 @@
                 <div class="contact-wrapper text-center">
                     <p> <?php echo Configure::read('Promoted.contactEmail'); ?></p>
                     <p><b><?php echo Configure::read('Promoted.contactPhone'); ?></b></p>
+                    <p><b><?php echo Configure::read('Promoted.contactPhone2'); ?></b></p>
                 </div>
                 <div id="contact-<?= $contact->id ?>" class="">
                     <div class="contact-body">

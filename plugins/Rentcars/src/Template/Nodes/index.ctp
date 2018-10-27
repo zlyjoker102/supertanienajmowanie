@@ -5,7 +5,7 @@ $firstNode = $nodes->first();
 
 ?>
 
-<section class="views">
+<section class="views node-list">
     <div class="breadcrumbs-wrapper">
         <div class="container">
             <div class="row">

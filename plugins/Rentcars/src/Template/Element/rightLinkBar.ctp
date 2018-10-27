@@ -17,7 +17,7 @@
 
     </div>
     <div class="box futsalTv">
-        <h4><a href="/magazyn-futsal">Futsal tv</a></h4>
+        <h4><a href="/magazyn-futsal"></a></h4>
         <a href="/magazyn-futsal"></a>
         <?php 
             // echo $this->Html->link(
