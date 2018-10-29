@@ -1,43 +1,32 @@
-$(document).ready(function () {
-  setTimeout(function () {
-    $('div.message').fadeOut('fast');
-  }, 5000);
 
   $(document).ready(function () {
-    $("#reviews").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      infinite: false,
-      dots: false,
-      responsive: [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          infinite: true
-        }
+    setTimeout(function () {
+      $('div.message').fadeOut('fast');
+    }, 5000);
 
-      },
-        {
-          breakpoint: 600,
+    if( $("#reviews").length){
+      $("#reviews").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        infinite: false,
+        dots: false,
+        responsive: [{
+          breakpoint: 1024,
           settings: {
-            slidesToShow: 2,
-            dots: true
+            slidesToShow: 1,
+            dots: false
           }
-
+  
         },
-        {
-          breakpoint: 300,
-          settings: "unslick" // destroys slick
-        }]
-    });
-  });
+          {
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+          }]
+      });
+    }
 
-    // $( document ).ready(function() {
-    //     setTimeout(function() {
-    //         $('div.message').fadeOut('fast');
-    //     }, 5000);
-    // });
+  });
 
   $(window).scroll(function() {
     if ($("#main-menu").offset().top > 100) {
@@ -46,4 +35,3 @@ $(document).ready(function () {
       $("#main-menu").removeClass("navbar-shrink");
     }
   });
-});

@@ -3,140 +3,191 @@
 */
 
 .views {
- padding-top: 93px;
+    padding-top: 93px;
 
- @include media-breakpoint-up(sm){
-   padding-top: 98px;
- }
-
-  .article{
-    margin-bottom: 50px;
-  }
-
-  .text-muted{
-    font-size: 12px;
-  }
-
-  .header {
-    padding: 40px 0;
-
-    .page-title {
-      margin-bottom: 0;
-      text-transform: uppercase;
-    }
-  }
-
-  .title {
-    padding: 15px 0;
-
-    a {
-      color: #212529;
-      font-size: 23px;
-    }
-  }
-
-  .btn-primary {
-    padding: 8px 30px;
-    font-size: 12px;
-    text-transform: none;
-    text-align: center;
-
-    @include media-breakpoint-up(md) {
-      text-align: left;
-    }
-  }
-
-  .button-wrapper {
-    margin-top: 20px;
-  }
-
-  .page-item {
-    .page-link {
-      color: #212529;
-      box-shadow: none;
+    @include media-breakpoint-up(sm) {
+        padding-top: 98px;
     }
 
-    &.active {
-      .page-link {
-        background-color: #b98700;
-        border-color: #b98700;
-        color: #fff;
-      }
+    .article {
+        margin-bottom: 50px;
     }
-  }
 
-  .page-body{
-    padding: 30px 20px 60px;
-    background: #fff;
-  }
+    .text-muted {
+        font-size: 12px;
+    }
+
+    .header {
+        padding: 20px 0;
+        
+        @include media-breakpoint-up(md){
+            padding: 40px 0;
+        }
+
+        .page-title {
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-size: 22px;
+
+            @include media-breakpoint-up(md){
+                font-size: 34px;
+            }
+
+            @include media-breakpoint-up(lg){
+                font-size: 40px;
+            }
+        }
+    }
+
+    .title {
+        padding: 15px 0;
+
+        a {
+            color: #212529;
+            font-size: 23px;
+        }
+    }
+
+    .btn-primary {
+        padding: 8px 30px;
+        font-size: 12px;
+        text-transform: none;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+        }
+    }
+
+    .button-wrapper {
+        margin-top: 20px;
+    }
+
+    .page-item {
+        .page-link {
+            color: #212529;
+            box-shadow: none;
+        }
+
+        &.active {
+            .page-link {
+                background-color: #b98700;
+                border-color: #b98700;
+                color: #fff;
+            }
+        }
+    }
+
+    .page-body {
+        // padding: 30px 0 60px;
+        background: #fff;
+
+        @include media-breakpoint-up(md){
+            padding: 30px 20px 60px; 
+        }
+    }
 }
 
 /**
 * Node view
 */
-.page-view{
-  padding-top: 93px;
+.page-view {
+    padding-top: 93px;
 
-  @include media-breakpoint-up(sm){
-    padding-top: 99px;
-  }
+    @include media-breakpoint-up(sm) {
+        padding-top: 99px;
+    }
 
-  .img-wrapper{
-    margin-bottom: 20px;
-  }
-
-  .header{
-    padding-left: 15px;
-  }
+    .img-wrapper {
+        margin-bottom: 20px;
+    }
 }
 
 /**
 * Contact View
 */
 .contact-view {
-  header {
-      font-size: 30px;
-      margin-bottom: 30px;
-      margin-top: 90px;
+    header {
+        font-size: 30px;
+        margin-bottom: 30px;
+        margin-top: 90px;
 
-      @include media-breakpoint-up(md) {
-        margin-top: 0;
-    }
-  }
-
-  .contact-wrapper {
-      font-size: 16px;
-      margin-bottom: 30px;
-
-      @include media-breakpoint-up(md) {
-          font-size: 22px;
-      }
-  }
-
-  header .form-control {
-      &:focus {
-          border-color: #b78806;
-          box-shadow: 0 0 0 0.1px rgb(183, 136, 6);
-      }
-  }
-
-  form {
-      padding: 25px 20px;
-      background: #fff;
-
-      .submit {
-          margin-top: 30px;
-      }
-
-      .btn-primary{
-        padding: 16px 30px;
-        font-size: 14px;
-
-        @include media-breakpoint-up(sm){
-          padding: 16px 60px;
-          font-size: 16px;
-
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
         }
-      }
-  }
+    }
+
+    .contact-wrapper {
+        font-size: 16px;
+        margin-bottom: 30px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+        }
+
+        a{
+            color: $dark-font;
+        }
+    }
+
+    header .form-control {
+        &:focus {
+            border-color: #b78806;
+            box-shadow: 0 0 0 0.1px rgb(183, 136, 6);
+        }
+    }
+
+    form {
+        padding: 25px 20px;
+        background: #fff;
+
+        .submit {
+            margin-top: 30px;
+        }
+
+        .btn-primary {
+            padding: 16px 30px;
+            font-size: 14px;
+
+            @include media-breakpoint-up(sm) {
+                padding: 16px 60px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.cars {
+    padding: 30px 0;
+    margin-top: 40px;
+    
+    .car {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .price {
+        position: absolute;
+        background: $brand-color;
+        right: 0;
+        color: #fff;
+    }
+
+    img{
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    ul {
+        font-size: 14px;
+        padding-left: 20px;
+
+        @include media-breakpoint-up(md){
+            font-size: 16px;
+        }
+    }
 }

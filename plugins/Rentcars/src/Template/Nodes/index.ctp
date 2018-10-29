@@ -1,5 +1,7 @@
 <?php
-$this->assign('title', 'Lista');
+$this->append('title');
+echo $node->title;
+$this->end();
 
 $firstNode = $nodes->first();
 

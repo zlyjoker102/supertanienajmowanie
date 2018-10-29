@@ -1,6 +1,7 @@
 <?php
 
 use Cake\Core\Configure;
+$topSectionImage = Configure::read('Promoted.topSectionImage');
 $phone1 = Configure::read('Promoted.contactPhone');
 $phone2 = Configure::read('Promoted.contactPhone2');
 $navSpecialClass = ($this->request->params['action'] != 'promoted') ? 'navbar-primary' : '';
@@ -51,7 +52,7 @@ $phoneIcon = '<svg height="30" viewBox="0 0 40 40" width="40"><path d="M20 2c9.9
 <?php
 if ($this->request->params['action'] == 'promoted'):
 ?>
-    <header class="masthead text-center text-white d-flex">
+    <header class="masthead text-center text-white d-flex" style="background: url(<?php echo $topSectionImage;?>) no-repeat bottom center; background-size: cover;">
         <div class="overlay overlay-bg"></div>
         <div class="container my-auto">
             <div class="row">
