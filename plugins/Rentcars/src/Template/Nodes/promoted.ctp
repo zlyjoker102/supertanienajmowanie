@@ -3,7 +3,7 @@
 use Cake\Core\Configure;
 
 $this->append('title');
-echo Configure::read('Promoted.websiteName');
+echo 'Busy osobowe, wynajem aut, wycieczki zagraniczne';
 $this->end();
 
 $pages = $nodes->toArray();
@@ -31,7 +31,8 @@ $phone2 = Configure::read('Promoted.contactPhone2');
 <section class="bg-dark text-white p-0">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-lg-6 p-0 home-about-left">
+
+                    <div class="col-lg-6 p-0 home-about-left">
 
             <?php
                 echo $this->Html->image($this->Image2->source($pages[0]->link)->resizeit(5000, 600)->imagePath(), [
@@ -43,14 +44,14 @@ $phone2 = Configure::read('Promoted.contactPhone2');
             <div class="col-lg-6 home-about">
                 <div class="about">
                     <h2 class="section-heading brand-color">
-                        <?php echo $pages[0]->title; ?>
+                        <?php echo "Wynajmij auto" ?>
                     </h2>
                     <p>
                         <?php echo $pages[0]->excerpt; ?>
                     </p>
                 </div>
                 <div class="button-wrapper">
-                    <a class="text-uppercase primary-btn show-more" href="/strona/wynajmij-auto-na-eventy"><?php echo __('Zobacz szczegóły'); ?></a>
+                    <a class="text-uppercase primary-btn show-more" href="/oferta/oferta"><?php echo __('Zobacz szczegóły'); ?></a>
                 </div>
             </div>
         </div>
@@ -58,12 +59,14 @@ $phone2 = Configure::read('Promoted.contactPhone2');
 </section>
 <section class="reviews">
     <div class="container text-center">
-        <h2 class="section-heading brand-color">opinie naszych klientów</h2>
-        <hr>
+        <div class="row">
+         <div class="col-12">
+         <h2 class="section-heading brand-color">opinie naszych klientów</h2>
+            <hr>
+        </div>           
         <div id="reviews" class="mx-auto col-md-8 col-lg-10 text-center">
             <?php echo $this->Regions->blocks('opinie-naszych-klientow'); ?>
-        </div>
-
+        </div></div>
     </div>
 </section>
 <section class="p-0" id="portfolio">
@@ -73,11 +76,11 @@ $phone2 = Configure::read('Promoted.contactPhone2');
             <?php foreach ($news as $article): ?>
                 <div class="col-lg-4 col-sm-6 col-xs-12 news-box">
                     <?php
-$imgSrc = $article['link'] ?? '/uploads/1.jpg';
-if ($imgSrc === 'value') {
-    $imgSrc = '/uploads/trip.jpg';
-}
-?>
+                    $imgSrc = $article['link'] ?? '/uploads/1.jpg';
+                    if ($imgSrc === 'value') {
+                        $imgSrc = '/uploads/trip.jpg';
+                    }
+                    ?>
                     <a class="portfolio-box" href="<?php echo '/aktualnosci/' . $article['slug']; ?>"
                        style="background: url('<?php echo $this->Image2->source($imgSrc)->resizeit(3000, 450)->imagePath(); ?>')no-repeat center center; background-size: cover;">
                         <div class="portfolio-box-caption">
@@ -110,10 +113,10 @@ if ($imgSrc === 'value') {
                 </p>
             </div>
         </div>
-        <div class="row">
+        <div class="row fast-contact">
             <div class="col-lg-4 ml-auto text-center">
                 <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-                <p><?php echo $phone; ?> <br> <?php echo $phone2; ?></p>
+                <div><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a> <br> <a href="tel:<?php echo $phone2; ?>"><?php echo $phone2; ?></a></div>
             </div>
             <div class="col-lg-4 mr-auto text-center">
                 <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>

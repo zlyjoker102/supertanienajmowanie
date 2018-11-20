@@ -3,7 +3,7 @@
     $type = $typesForLayout[$this->Nodes->field('type')];
 
     if ($type->format_show_author || $type->format_show_date) {
-        echo __d('croogo', 'Dodano: ');
+        echo __d('croogo', 'Dodano:');
     }
     if ($type->format_show_author) {
         echo ' ' . __d('croogo', 'przez') . ' ';

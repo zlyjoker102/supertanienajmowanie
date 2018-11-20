@@ -1,6 +1,6 @@
 <?php
 $this->set(compact('block'));
-$class = $block->alias;
+$class = 'block block-' . $block->alias;
 if ($block->class != null) {
     $class .= ' ' . $block->class;
 }

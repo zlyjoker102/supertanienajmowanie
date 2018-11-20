@@ -11,7 +11,7 @@ if ($type->show_breadcrumbs == 1) {
         ->add(__d('croogo', $node['title']));
 }
 ?>
-<section class="views page-view news-view">
+<section class="views page-view">
     <div class="breadcrumbs-wrapper">
         <div class="container">
             <div class="row">

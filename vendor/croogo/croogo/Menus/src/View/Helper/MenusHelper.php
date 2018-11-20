@@ -197,7 +197,6 @@ class MenusHelper extends Helper
             'menu' => $menu,
             'options' => $options,
         ]);
-
         return $output;
     }
 
@@ -242,7 +241,6 @@ class MenusHelper extends Helper
             'linkAttributes' => []
         ];
         $options = array_merge($_options, $options);
-
 
         $output = '';
         foreach ($links as $link) {
