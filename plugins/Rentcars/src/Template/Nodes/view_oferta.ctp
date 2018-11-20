@@ -201,7 +201,7 @@ $this->end();
 
                                 </li>
                                 <li>
-                                    <b>Koszta 500zł/dobra</b>
+                                    <b>Koszta 500zł/doba</b>
                                 </li>
                             </ul>
                             <!-- <div class="price">
