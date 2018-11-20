@@ -3,6 +3,10 @@ use Cake\Core\Configure;
 $this->append('title');
     echo 'Kontakt';
 $this->end();
+
+$email = Configure::read('Promoted.contactEmail');
+$phone = Configure::read('Promoted.contactPhone');
+$phone2 = Configure::read('Promoted.contactPhone2');
 ?>
 
 <section class="contact-view">
@@ -21,9 +25,9 @@ $this->end();
             </header>
             <div class="colxs-12 col-md-8 mx-auto">
                 <div class="contact-wrapper text-center">
-                    <p> <?php echo Configure::read('Promoted.contactEmail'); ?></p>
-                    <p><b><?php echo Configure::read('Promoted.contactPhone'); ?></b></p>
-                    <p><b><?php echo Configure::read('Promoted.contactPhone2'); ?></b></p>
+                    <p><a href="mailto:<?php echo $email; ?>"><?php echo$email; ?></a> </p>
+                    <p><b><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></b></p>
+                    <p><b><a href="tel:<?php echo $phone2; ?>"><?php echo $phone2; ?></a></b></p>
                 </div>
                 <div id="contact-<?= $contact->id ?>" class="">
                     <div class="contact-body">

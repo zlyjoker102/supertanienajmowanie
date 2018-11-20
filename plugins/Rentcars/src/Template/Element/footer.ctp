@@ -6,7 +6,7 @@ use Cake\Core\Configure;
 
 <?php
 if (!isset($contact)):
-?>
+    ?>
     <span class="pulse">
     <a href="/kontakt">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40"><style>.a {
@@ -17,7 +17,7 @@ if (!isset($contact)):
                     class="a"/></svg>
     </a>
 </span>
-<?php endif;?>
+<?php endif; ?>
 
 <footer class="footer">
     <div class="container">

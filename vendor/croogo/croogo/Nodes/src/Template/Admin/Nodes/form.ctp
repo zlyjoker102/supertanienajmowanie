@@ -62,7 +62,7 @@ $this->start('tab-content');
 //            'multiple' => true,
             'required' => true,
             'options' => [
-                'value' => $node->link ?? '',
+                $node->link => $node->link,
             ]
         ]);
         echo $this->Form->input('body', [
