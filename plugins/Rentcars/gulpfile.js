@@ -34,6 +34,7 @@ gulp.task('js', function () {
     'webroot/node_modules/bootstrap/dist/js/bootstrap.js',
     'webroot/node_modules/jquery-validation/dist/jquery.validate.js',
     'webroot/node_modules/slick-carousel/slick/slick.js',
+    'webroot/node_modules/lightbox2/dist/js/lightbox.js',
     'webroot/js/modules/script.js'
   ])
     .pipe(concat('app.js'))

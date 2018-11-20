@@ -111,6 +111,10 @@
         @include media-breakpoint-up(md) {
             font-size: 22px;
         }
+
+        a {
+            color: $dark-font;
+        }
     }
 
     header .form-control {
@@ -146,6 +150,12 @@
     .car {
         position: relative;
         margin-bottom: 20px;
+
+        @include media-breakpoint-up(lg){
+            &:first-of-type{
+                margin-bottom: 60px;
+            }
+        }
     }
 
     .price {
@@ -158,8 +168,15 @@
     h3 {
         font-size: 20px;
         text-transform: uppercase;
+
+        @include media-breakpoint-up(lg){
+            font-size: 25px;
+        }
     }
     ul {
         font-size: 16px;
+        @include media-breakpoint-up(lg){
+            font-size: 20px;
+        }
     }
 }

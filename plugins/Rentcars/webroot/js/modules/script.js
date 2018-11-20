@@ -1,9 +1,11 @@
-$(document).ready(function () {
-  setTimeout(function () {
-    $('div.message').fadeOut('fast');
-  }, 5000);
+
+
 
   $(document).ready(function () {
+      setTimeout(function () {
+          $('div.message').fadeOut('fast');
+      }, 5000);
+
     $("#reviews").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -31,19 +33,13 @@ $(document).ready(function () {
           settings: "unslick" // destroys slick
         }]
     });
+
+      $(window).scroll(function() {
+          if ($("#main-menu").offset().top > 100) {
+              $("#main-menu").addClass("navbar-shrink");
+          } else {
+              $("#main-menu").removeClass("navbar-shrink");
+          }
+      });
   });
 
-    // $( document ).ready(function() {
-    //     setTimeout(function() {
-    //         $('div.message').fadeOut('fast');
-    //     }, 5000);
-    // });
-
-  $(window).scroll(function() {
-    if ($("#main-menu").offset().top > 100) {
-      $("#main-menu").addClass("navbar-shrink");
-    } else {
-      $("#main-menu").removeClass("navbar-shrink");
-    }
-  });
-});
